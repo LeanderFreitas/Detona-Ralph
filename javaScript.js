@@ -5,7 +5,9 @@ const state = {
         timeleft: document.querySelector("#time-left"),
         score: document.querySelector("#score"),
     },
-    values:{},
+    values:{
+        timerId:null,
+    },
 };
 
 function randomSquare(){
@@ -14,19 +16,23 @@ function randomSquare(){
     });
 
     let randomNumber = Math.floor(Math.random() * 9);
-    let randomNumber = state.view.squares[randomNumber];
-    randomSquare.classList("enemy");
+    let randomSquare = state.view.squares[randomNumber];
+    randomSquare.classList.add("enemy");
+}
+
+
+function moveEnemy(){
+    state.values.timerId = setInterval(randomSquare,1000);
 }
 
 
 function addListanerHitBox(){
- state.view.squares.forEach((square)=>{
-    if(square.id ===);
- });
+ state.view.squares.forEach((square)=>{});
 }
 
 
 function initialize(){
-
+    moveEnemy();
 }
+
 initialize();
