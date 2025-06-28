@@ -10,8 +10,22 @@ const state = {
         gameVelocity: 1000,
         hitPosition: 0,
         result: 0,
+        curretTime: 60,
     },
+    actions:{
+        timerId:setInterval(randomSquare,1000),
+        countDownTimerId: setInterval(countDown,1000),
+    }
 };
+function countDown(){
+    state.values.curretTime --;
+    state.view.timeleft.textContent = state.values.curretTime;
+
+    if(state.values.curretTime <- 0);
+    clearInterval(state.actions.countDownTimerId);
+    clearInterval(state.actions.timerId);
+        alert("Gamer Over! o seu resultado foi" + state.values.result);
+}
 
 function randomSquare(){
     state.view.squares.forEach((square)=>{
